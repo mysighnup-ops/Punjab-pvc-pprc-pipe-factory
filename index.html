@@ -1,125 +1,877 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Punjab PVC & PPRC Pipe Factory | Mian Channu</title>
-  <meta name="description" content="Punjab PVC & PPRC Pipe Factory — quality PVC and PPRC pipes and fittings at Sohna Chowk, Mian Channu.">
+
+  <meta name="description" content="Punjab PVC & PPRC Pipe Factory — PVC and PPRC pipes and fittings at Sohna Chowk, Mian Channu.">
+
   <style>
-    :root{--yellow:#ffd400;--green:#08a95b;--dark:#101820;--light:#f6f7f8;--muted:#68727d}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#17202a;background:#fff}
-    a{text-decoration:none;color:inherit}.top{background:var(--dark);color:#fff;padding:9px 6%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px}
-    header{position:sticky;top:0;z-index:10;background:#fff;box-shadow:0 2px 14px #0001}.nav{max-width:1180px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:900}.mark{width:48px;height:48px;border:4px solid var(--yellow);border-radius:50%;display:grid;place-items:center;background:var(--dark);color:var(--yellow);font-size:23px}.brand span{line-height:1.05}.brand small{display:block;font-weight:600;color:#666;font-size:11px;margin-top:4px}
-    nav{display:flex;gap:22px;font-weight:700;font-size:14px}nav a:hover{color:#d19f00}.btn{display:inline-block;background:var(--yellow);padding:13px 20px;border-radius:30px;font-weight:800}
-    .hero{background:linear-gradient(90deg,#0d151c 0%,#0d151cdd 42%,#0d151c22 100%),url("assets/website-design.png") center/cover;min-height:560px;display:flex;align-items:center;color:#fff}
-    .hero-inner{max-width:1180px;width:100%;margin:auto;padding:70px 20px}.eyebrow{color:var(--yellow);font-weight:800;letter-spacing:2px}.hero h1{font-size:clamp(38px,6vw,70px);line-height:.98;margin:12px 0}.hero h1 span{color:var(--yellow)}.hero p{max-width:570px;font-size:18px;line-height:1.6;color:#eef2f4}.tag{display:inline-block;margin:12px 0 25px;padding:8px 14px;background:#fff;color:#111;border-radius:8px;font-weight:800}
-    section{padding:70px 20px}.wrap{max-width:1180px;margin:auto}.section-title{text-align:center;margin-bottom:35px}.section-title h2{font-size:36px;margin:0 0 8px}.section-title p{color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;border:1px solid #e4e7ea;border-radius:16px;padding:28px;box-shadow:0 8px 25px #0000000b}.card .icon{font-size:36px}.card h3{margin:12px 0 8px}.card p{color:var(--muted);line-height:1.6}
-    .strip{background:var(--yellow);padding:24px 20px}.strip-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;font-weight:900}.strip small{display:block;font-weight:600;margin-top:5px}
-    .about{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.about-box{background:var(--dark);color:#fff;border-radius:20px;padding:40px}.about-box h2{color:var(--yellow);font-size:38px;margin-top:0}.about p{line-height:1.8;color:#59636e}.about-box p{color:#e8ecef}
-    .contact{background:var(--light)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.contact-card{background:#fff;border-radius:18px;padding:30px;border:1px solid #e6e8ea}.contact-row{padding:14px 0;border-bottom:1px solid #eee}.contact-row:last-child{border-bottom:0}.contact-row b{display:block;margin-bottom:5px}.contact-row span{color:var(--muted)}
-    footer{background:#0d151c;color:#fff;padding:35px 20px}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot small{color:#aeb7bd}.float{position:fixed;right:20px;bottom:20px;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:27px;box-shadow:0 8px 25px #0003;z-index:20}
-    @media(max-width:800px){nav{display:none}.grid,.strip-grid,.about,.contact-grid{grid-template-columns:1fr}.hero{min-height:620px}.hero-inner{padding-top:100px}.top{justify-content:center;text-align:center}.brand{font-size:14px}.brand small{font-size:9px}}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9f8;
+      color: #17201c;
+      line-height: 1.6;
+    }
+
+    :root {
+      --yellow: #ffd400;
+      --green: #08a95b;
+      --dark: #101820;
+      --light: #f7f9f8;
+      --white: #ffffff;
+    }
+
+    header {
+      background: var(--dark);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,.15);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .logo-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--yellow);
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      font-weight: 900;
+      border: 4px solid white;
+    }
+
+    .logo-text {
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .logo-text span {
+      color: var(--yellow);
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--yellow);
+    }
+
+    .whatsapp-btn {
+      background: var(--green);
+      color: white !important;
+      padding: 10px 15px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(255,212,0,.35), transparent 28%),
+        radial-gradient(circle at 15% 80%, rgba(8,169,91,.28), transparent 30%),
+        linear-gradient(135deg, #101820 0%, #173329 55%, #071b13 100%);
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -160px;
+      width: 480px;
+      height: 480px;
+      border: 60px solid rgba(255,212,0,.12);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 80px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--dark);
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.05;
+      max-width: 850px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 650px;
+      color: #e5eae7;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: var(--dark);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 75px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title small {
+      color: var(--green);
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-top: 6px;
+      color: var(--dark);
+    }
+
+    .section-title p {
+      max-width: 650px;
+      margin: 10px auto 0;
+      color: #5c6661;
+    }
+
+    .products {
+      background: white;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: var(--light);
+      border: 1px solid #e2e7e4;
+      border-radius: 18px;
+      padding: 28px;
+      transition: .25s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+      border-color: var(--yellow);
+    }
+
+    .product-icon {
+      width: 65px;
+      height: 65px;
+      border-radius: 16px;
+      background: var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .product-card h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .product-card p {
+      color: #606b65;
+      font-size: 15px;
+    }
+
+    .quality {
+      background: var(--dark);
+      color: white;
+    }
+
+    .quality .section-title h2 {
+      color: white;
+    }
+
+    .quality .section-title p {
+      color: #cbd4cf;
+    }
+
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .quality-box {
+      text-align: center;
+      padding: 25px 15px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .quality-box .icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .quality-box h3 {
+      color: var(--yellow);
+      margin-bottom: 5px;
+    }
+
+    .about {
+      background: #f0f4f1;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: white;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    }
+
+    .about-box h2 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .about-box p {
+      color: #59645f;
+      margin-bottom: 15px;
+    }
+
+    .contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .contact-card {
+      background: var(--dark);
+      color: white;
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .contact-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: var(--yellow);
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .contact-item h3 {
+      color: var(--yellow);
+      margin-bottom: 3px;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .map-card {
+      border-radius: 20px;
+      padding: 35px;
+      background:
+        linear-gradient(135deg, rgba(8,169,91,.92), rgba(16,24,32,.95));
+      color: white;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .map-card h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .map-card p {
+      margin-bottom: 20px;
+      color: #e4ebe7;
+    }
+
+    footer {
+      background: #07100d;
+      color: #b9c3be;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer strong {
+      color: var(--yellow);
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 28px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.25);
+      z-index: 999;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quality-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo-text {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 570px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 55px 15px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .product-grid,
+      .quality-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-box,
+      .contact-card,
+      .map-card {
+        padding: 25px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <div class="top">
-    <div>📞 Call: <b>0300-6825983</b></div>
-    <div>📍 Sohna Chowk, Mian Channu, Punjab, Pakistan</div>
-    <div>Quality Pipes for a Better Tomorrow</div>
-  </div>
 
-  <header>
-    <div class="nav">
-      <a class="brand" href="#home">
-        <div class="mark">P</div>
-        <span>PUNJAB PVC & PPRC<br>PIPE FACTORY<small>Pure Pipe Quality</small></span>
+<header>
+  <div class="nav">
+
+    <a href="#home" class="logo">
+      <div class="logo-icon">P</div>
+      <div class="logo-text">
+        PUNJAB <span>PVC & PPRC</span><br>
+        PIPE FACTORY
+      </div>
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#quality">Quality</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="whatsapp-btn" href="https://wa.me/923006825983" target="_blank">
+        WhatsApp
       </a>
-      <nav>
-        <a href="#home">Home</a><a href="#products">Products</a><a href="#quality">Quality</a><a href="#about">About</a><a href="#contact">Contact</a>
-      </nav>
-      <a class="btn" href="https://wa.me/923006825983" target="_blank" rel="noopener">WhatsApp Us</a>
-    </div>
-  </header>
+    </nav>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-inner">
-        <div class="eyebrow">WELCOME TO</div>
-        <h1>PUNJAB <span>PVC & PPRC</span><br>PIPE FACTORY</h1>
-        <div class="tag">Pure Pipe Quality</div>
-        <p>Quality PVC & PPRC pipes and fittings for plumbing, water supply, agriculture and industrial applications.</p>
-        <a class="btn" href="#products">Explore Products →</a>
-      </div>
-    </section>
+  </div>
+</header>
 
-    <section id="products">
-      <div class="wrap">
-        <div class="section-title"><h2>Our Products</h2><p>Reliable products for stronger, longer-lasting installations.</p></div>
-        <div class="grid">
-          <div class="card"><div class="icon">⚪</div><h3>PVC Pipes</h3><p>Strong and dependable pipes for water supply and drainage applications.</p></div>
-          <div class="card"><div class="icon">🟢</div><h3>PPRC Pipes</h3><p>Hot and cold water piping solutions with durable performance.</p></div>
-          <div class="card"><div class="icon">🔧</div><h3>PPRC Fittings</h3><p>Elbows, tees, couplers and other fittings for secure connections.</p></div>
-          <div class="card"><div class="icon">⚙️</div><h3>PVC Fittings</h3><p>Practical fittings designed for strength and easy installation.</p></div>
-          <div class="card"><div class="icon">🚰</div><h3>Valves</h3><p>Useful valve solutions for plumbing and water-control systems.</p></div>
-          <div class="card"><div class="icon">💧</div><h3>Irrigation Pipes</h3><p>Pipe solutions for agricultural and irrigation requirements.</p></div>
-        </div>
-      </div>
-    </section>
 
-    <div class="strip" id="quality">
-      <div class="strip-grid">
-        <div>🛡️ Premium Quality<small>Durable & Reliable</small></div>
-        <div>⚙️ Modern Production<small>Consistent Manufacturing</small></div>
-        <div>✓ Quality Control<small>Every Pipe Matters</small></div>
-        <div>🤝 Customer Focus<small>Long-Term Trust</small></div>
-      </div>
+<section class="hero" id="home">
+  <div class="hero-content">
+
+    <span class="badge">PVC & PPRC PIPE FACTORY</span>
+
+    <h1>
+      PUNJAB PVC & PPRC
+      <span>PIPE FACTORY</span>
+    </h1>
+
+    <p>
+      Quality PVC and PPRC pipes & fittings for plumbing,
+      construction and water supply needs.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#products" class="btn btn-yellow">
+        View Products
+      </a>
+
+      <a href="https://wa.me/923006825983?text=Assalam-o-Alaikum%2C%20I%20want%20information%20about%20PVC%20and%20PPRC%20pipes." 
+         target="_blank" 
+         class="btn btn-green">
+        WhatsApp Us
+      </a>
+
+      <a href="tel:+923006825983" class="btn btn-outline">
+        Call Now
+      </a>
     </div>
 
-    <section id="about">
-      <div class="wrap about">
-        <div>
-          <div class="section-title" style="text-align:left"><h2>Built on Quality, Driven by Trust</h2></div>
-          <p>Punjab PVC & PPRC Pipe Factory is focused on supplying quality pipe and fitting solutions for customers in Mian Channu and surrounding areas.</p>
-          <p>Our aim is simple: dependable products, practical service and lasting customer relationships.</p>
-          <a class="btn" href="#contact">Contact Us →</a>
-        </div>
-        <div class="about-box">
-          <h2>Pure Pipe Quality</h2>
-          <p>Strong pipes. Reliable fittings. Quality that customers can trust.</p>
-          <p><b>Location:</b><br>Sohna Chowk, Mian Channu, Punjab, Pakistan</p>
+  </div>
+</section>
+
+
+<section class="products" id="products">
+
+  <div class="container">
+
+    <div class="section-title">
+      <small>Our Products</small>
+      <h2>PVC & PPRC Products</h2>
+      <p>
+        Explore our range of pipes and plumbing products.
+        Contact us for current sizes, availability and prices.
+      </p>
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-icon">▣</div>
+        <h3>PVC Pipes</h3>
+        <p>
+          PVC pipes suitable for plumbing, water supply and
+          general construction applications.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">◉</div>
+        <h3>PPRC Pipes</h3>
+        <p>
+          PPRC piping solutions for modern plumbing and
+          water supply systems.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">⌞</div>
+        <h3>PPRC Fittings</h3>
+        <p>
+          Elbows, tees and other PPRC fittings for reliable
+          plumbing connections.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">⊂</div>
+        <h3>PVC Fittings</h3>
+        <p>
+          PVC fittings for different plumbing and water
+          installation requirements.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">⚙</div>
+        <h3>Valves</h3>
+        <p>
+          Plumbing valves and related components for
+          water control systems.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">≈</div>
+        <h3>Irrigation Pipes</h3>
+        <p>
+          Pipe solutions for agricultural and irrigation
+          applications.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="quality" id="quality">
+
+  <div class="container">
+
+    <div class="section-title">
+      <small>Our Promise</small>
+      <h2>Pure Pipe Quality</h2>
+      <p>
+        We focus on providing dependable products and
+        professional customer service.
+      </p>
+    </div>
+
+    <div class="quality-grid">
+
+      <div class="quality-box">
+        <div class="icon">✓</div>
+        <h3>Quality</h3>
+        <p>Quality-focused pipe products.</p>
+      </div>
+
+      <div class="quality-box">
+        <div class="icon">⚙</div>
+        <h3>Reliable</h3>
+        <p>Products for plumbing applications.</p>
+      </div>
+
+      <div class="quality-box">
+        <div class="icon">⌁</div>
+        <h3>Variety</h3>
+        <p>PVC, PPRC pipes and fittings.</p>
+      </div>
+
+      <div class="quality-box">
+        <div class="icon">☎</div>
+        <h3>Support</h3>
+        <p>Contact us for product information.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="about" id="about">
+
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="about-box">
+        <small style="color:#08a95b;font-weight:bold;">
+          ABOUT US
+        </small>
+
+        <h2>
+          Punjab PVC & PPRC Pipe Factory
+        </h2>
+
+        <p>
+          We provide PVC and PPRC pipes, fittings and
+          plumbing-related products from our location at
+          Sohna Chowk, Mian Channu.
+        </p>
+
+        <p>
+          For product sizes, availability and current rates,
+          please contact us directly on WhatsApp or phone.
+        </p>
+
+        <a href="https://wa.me/923006825983" 
+           target="_blank"
+           class="btn btn-green">
+          Contact on WhatsApp
+        </a>
+      </div>
+
+      <div class="about-box">
+        <h2>Pure Pipe Quality</h2>
+
+        <p>
+          PVC and PPRC products are widely used in plumbing,
+          construction, water supply and irrigation.
+        </p>
+
+        <p>
+          Our website will be updated with additional product
+          information and rate details in the future.
+        </p>
+
+        <div style="
+          margin-top:20px;
+          padding:18px;
+          background:#fff8c7;
+          border-left:5px solid #ffd400;
+          border-radius:10px;
+        ">
+          <strong>Need a quotation?</strong><br>
+          Send us your required product and quantity on WhatsApp.
         </div>
       </div>
-    </section>
 
-    <section class="contact" id="contact">
-      <div class="wrap">
-        <div class="section-title"><h2>Contact Us</h2><p>For product information and orders, contact us directly.</p></div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="contact-row"><b>📞 Phone / WhatsApp</b><span>0300-6825983</span></div>
-            <div class="contact-row"><b>📍 Address</b><span>Sohna Chowk, Mian Channu, Punjab, Pakistan</span></div>
-            <div class="contact-row"><b>💬 WhatsApp</b><span><a href="https://wa.me/923006825983" target="_blank" rel="noopener">Start a WhatsApp chat</a></span></div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="section-title">
+      <small>Get In Touch</small>
+      <h2>Contact Us</h2>
+      <p>
+        Contact Punjab PVC & PPRC Pipe Factory for product
+        information and quotations.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+
+        <div class="contact-item">
+          <div class="contact-icon">☎</div>
+
+          <div>
+            <h3>Phone</h3>
+            <a href="tel:+923006825983">
+              0300 6825983
+            </a>
           </div>
-          <div class="contact-card">
-            <h3>Find Us</h3>
-            <p style="color:#68727d;line-height:1.6">Open the location in Google Maps and get directions to Sohna Chowk, Mian Channu.</p>
-            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Sohna+Chowk+Mian+Channu+Punjab+Pakistan" target="_blank" rel="noopener">Open Google Maps →</a>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">⌂</div>
+
+          <div>
+            <h3>Address</h3>
+            <p>
+              Sohna Chowk,<br>
+              Mian Channu, Punjab, Pakistan
+            </p>
           </div>
         </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">●</div>
+
+          <div>
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/923006825983" target="_blank">
+              Chat with us on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+
+          <a href="tel:+923006825983" class="btn btn-yellow">
+            Call Now
+          </a>
+
+          <a href="https://wa.me/923006825983?text=Assalam-o-Alaikum%2C%20I%20want%20a%20quotation." 
+             target="_blank"
+             class="btn btn-green">
+            Get Quotation
+          </a>
+
+        </div>
+
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="foot">
-      <div><b>PUNJAB PVC & PPRC PIPE FACTORY</b><br><small>Pure Pipe Quality</small></div>
-      <div><small>📞 0300-6825983 · 📍 Sohna Chowk, Mian Channu</small></div>
-      <div><small>© 2026 Punjab PVC & PPRC Pipe Factory. All Rights Reserved.</small></div>
+
+      <div class="map-card">
+
+        <h2>Find Us</h2>
+
+        <p>
+          Punjab PVC & PPRC Pipe Factory<br>
+          Sohna Chowk, Mian Channu
+        </p>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Sohna+Chowk+Mian+Channu+Punjab+Pakistan"
+          target="_blank"
+          class="btn btn-yellow"
+          style="width:max-content;"
+        >
+          Open Google Maps
+        </a>
+
+      </div>
+
     </div>
-  </footer>
 
-  <a class="float" href="https://wa.me/923006825983" target="_blank" rel="noopener" aria-label="WhatsApp">☘</a>
+  </div>
+</section>
+
+
+<footer>
+
+  <p>
+    © 2026 <strong>Punjab PVC & PPRC Pipe Factory</strong>.
+    All Rights Reserved.
+  </p>
+
+  <p>
+    Sohna Chowk, Mian Channu | 0300 6825983
+  </p>
+
+</footer>
+
+
+<a
+  href="https://wa.me/923006825983"
+  target="_blank"
+  class="floating-whatsapp"
+  aria-label="WhatsApp"
+>
+  💬
+</a>
+
 </body>
 </html>
