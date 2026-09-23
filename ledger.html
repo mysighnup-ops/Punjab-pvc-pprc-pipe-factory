@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Ledger - Punjab PVC & PPRC Pipe Factory</title>
+
+<style>
+body{
+  font-family:Arial,sans-serif;
+  background:#f3f5f7;
+  margin:0;
+  padding:20px;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+}
+h1{
+  background:#123b2a;
+  color:#fff;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+}
+.card{
+  background:#fff;
+  padding:20px;
+  margin:15px 0;
+  border-radius:12px;
+  box-shadow:0 2px 8px #ccc;
+}
+input,select,button{
+  width:100%;
+  padding:12px;
+  margin:7px 0;
+  box-sizing:border-box;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+button{
+  background:#123b2a;
+  color:white;
+  border:0;
+  cursor:pointer;
+  font-weight:bold;
+}
+button:hover{
+  opacity:.9;
+}
+.balance{
+  font-size:24px;
+  font-weight:bold;
+  text-align:center;
+  padding:15px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
+th,td{
+  border:1px solid #ddd;
+  padding:10px;
+  text-align:center;
+}
+th{
+  background:#123b2a;
+  color:white;
+}
+.delete{
+  background:#b00020;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Punjab PVC & PPRC Pipe Factory<br>Customer Ledger</h1>
+
+<div class="card">
+<h2>نیا کسٹمر</h2>
+
+<input id="customerName" placeholder="کسٹمر کا نام">
+<input id="customerPhone" placeholder="WhatsApp نمبر">
+
+<button onclick="addCustomer()">کسٹمر محفوظ کریں</button>
+</div>
+
+<div class="card">
+<h2>کسٹمر منتخب کریں</h2>
+
+<select id="customerSelect" onchange="showLedger()">
+<option value="">کسٹمر منتخب کریں</option>
+</select>
+
+<div id="customerInfo"></div>
+</div>
+
+<div class="card" id="entryBox" style="display:none">
+
+<h2>نیا لین دین</h2>
+
+<select id="entryType">
+<option value="sale">ادھار / مال دیا</option>
+<option value="payment">وصولی</option>
+</select>
+
+<input id="amount" type="number" placeholder="رقم">
+<input id="details" placeholder="تفصیل">
+
+<button onclick="addEntry()">لین دین محفوظ کریں</button>
+
+</div>
+
+<div class="card" id="ledgerBox" style="display:none">
+
+<h2>کسٹمر کا حساب</h2>
+
+<div class="balance">
+بقایا: Rs. <span id="balance">0</span>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>تاریخ</th>
+<th>تفصیل</th>
+<th>ادھار</th>
+<th>وصولی</th>
+<th>بقایا</th>
+</tr>
+</thead>
+
+<tbody id="ledgerTable"></tbody>
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+let customers =
+JSON.parse(localStorage.getItem("pvcCustomers") || "[]");
+
+function saveData(){
+  localStorage.setItem(
+    "pvcCustomers",
+    JSON.stringify(customers)
+  );
+}
+
+function addCustomer(){
+
+  let name =
+  document.getElementById("customerName").value.trim();
+
+  let phone =
+  document.getElementById("customerPhone").value.trim();
+
+  if(!name){
+    alert("کسٹمر کا نام لکھیں");
+    return;
+  }
+
+  customers.push({
+    id:Date.now(),
+    name:name,
+    phone:phone,
+    entries:[]
+  });
+
+  saveData();
+
+  document.getElementById("customerName").value="";
+  document.getElementById("customerPhone").value="";
+
+  loadCustomers();
+
+  alert("کسٹمر محفوظ ہوگیا");
+}
+
+function loadCustomers(){
+
+  let select =
+  document.getElementById("customerSelect");
+
+  select.innerHTML =
+  '<option value="">کسٹمر منتخب کریں</option>';
+
+  customers.forEach(c=>{
+
+    let option=document.createElement("option");
+
+    option.value=c.id;
+    option.textContent=c.name;
+
+    select.appendChild(option);
+
+  });
+}
+
+function showLedger(){
+
+  let id =
+  Number(document.getElementById("customerSelect").value);
+
+  let customer =
+  customers.find(c=>c.id===id);
+
+  if(!customer){
+
+    document.getElementById("entryBox").style.display="none";
+    document.getElementById("ledgerBox").style.display="none";
+
+    return;
+  }
+
+  document.getElementById("entryBox").style.display="block";
+  document.getElementById("ledgerBox").style.display="block";
+
+  document.getElementById("customerInfo").innerHTML =
+  "<b>کسٹمر:</b> "+customer.name+
+  "<br><b>WhatsApp:</b> "+(customer.phone || "نمبر موجود نہیں");
+
+  renderLedger(customer);
+}
+
+function addEntry(){
+
+  let id =
+  Number(document.getElementById("customerSelect").value);
+
+  let customer =
+  customers.find(c=>c.id===id);
+
+  let amount =
+  Number(document.getElementById("amount").value);
+
+  let details =
+  document.getElementById("details").value.trim();
+
+  let type =
+  document.getElementById("entryType").value;
+
+  if(!amount){
+    alert("رقم لکھیں");
+    return;
+  }
+
+  customer.entries.push({
+    date:new Date().toLocaleDateString("en-GB"),
+    type:type,
+    amount:amount,
+    details:details || (type==="sale" ? "مال دیا" : "وصولی")
+  });
+
+  saveData();
+
+  document.getElementById("amount").value="";
+  document.getElementById("details").value="";
+
+  renderLedger(customer);
+
+  alert("لین دین محفوظ ہوگیا");
+}
+
+function renderLedger(customer){
+
+  let table =
+  document.getElementById("ledgerTable");
+
+  table.innerHTML="";
+
+  let balance=0;
+
+  customer.entries.forEach(e=>{
+
+    if(e.type==="sale"){
+      balance += e.amount;
+    }else{
+      balance -= e.amount;
+    }
+
+    let row=table.insertRow();
+
+    row.insertCell(0).textContent=e.date;
+    row.insertCell(1).textContent=e.details;
+
+    row.insertCell(2).textContent=
+    e.type==="sale" ? "Rs. "+e.amount : "-";
+
+    row.insertCell(3).textContent=
+    e.type==="payment" ? "Rs. "+e.amount : "-";
+
+    row.insertCell(4).textContent=
+    "Rs. "+balance;
+
+  });
+
+  document.getElementById("balance").textContent =
+  balance.toLocaleString();
+}
+
+loadCustomers();
+
+</script>
+
+</body>
+</html>
